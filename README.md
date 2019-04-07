@@ -99,7 +99,3 @@ Fork this repo or create a new public repo and then send the link to [waleed@pro
 ## Questions / Problems / Stuck?
 
 Email me [waleed@productbox.dev](mailto:waleed@productbox.dev)
-
-## License
-
-I have licensed this project under the MIT license so that you may use this for a portfolio piece (or anything else!).
