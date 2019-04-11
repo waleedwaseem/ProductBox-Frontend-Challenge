@@ -10,7 +10,12 @@ const ProductListItem = (props) => {
 			/>
 		<div> ${props.product.price } </div>
 		<p>
-			<button> Add to Cart </button>
+			<button onClick={() => props.addToCart(props.product)}> Add to Cart ({
+					(props.cartItem && props.cartItem.quantity) || 0})</button>
+			{props.cartItem
+				? <button onClick={() => props.removeFromCart(props.cartItem)}> Remove </button>
+				: null
+			}
 		</p>
 	</div>
 }
