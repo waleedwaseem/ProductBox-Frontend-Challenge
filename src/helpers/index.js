@@ -31,6 +31,16 @@ export const getItemQuantityCount = (cart) => {
 			}, 0)
 }
 
+// This function gets total price of cart
+export const getTotalAmount = (cart) => {
+	return cart.reduce((acc, item) => {
+				if(acc === undefined) {
+					acc = 0;
+				}
+				return acc + parseInt(item.price) * item.quantity
+			}, 0)
+}
+
 // save all store state to localStorage
 export function saveToLocalStorage(state) {
 	try {
