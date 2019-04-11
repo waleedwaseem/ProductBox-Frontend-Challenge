@@ -1,8 +1,9 @@
 import React from 'react';
+import Checkout from '../components/checkout'
 
 const CheckoutPage = (props) => {
 	return <div>
-		<p>Checkout page details</p>
+		<Checkout />
 	</div>
 }
 
