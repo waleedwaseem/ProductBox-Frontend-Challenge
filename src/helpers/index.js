@@ -23,3 +23,27 @@ export const removeFromCart = (cart, item) => {
 		? [...cartWithoutItem(cart, item)]
 		: [...cartWithoutItem(cart, item), { ...item, quantity: item.quantity - 1}]
 }
+
+// save all store state to localStorage
+export function saveToLocalStorage(state) {
+	try {
+		const serializedState = JSON.stringify(state);
+		localStorage.setItem('state', serializedState);
+	} catch(e) {
+		console.log(e);
+	}
+}
+
+// retrieve all store state from localStorage
+export function loadFromLocalStorage() {
+	try {
+		const serializedState = localStorage.getItem('state');
+		if(serializedState === null) {
+			return undefined
+		}
+		return JSON.parse(serializedState)
+	} catch(e) {
+		console.log(e);
+		return undefined;
+	}
+}
