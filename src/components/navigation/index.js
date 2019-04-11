@@ -1,7 +1,8 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
+import {getItemQuantityCount} from '../../helpers';
 
-const Navigation = (props) => 
+const Navigation = ({ cart }) => 
 	<nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
 		<ul className="navbar-nav mr-auto">
 			<li>
@@ -15,7 +16,7 @@ const Navigation = (props) =>
 			</li>
     	</ul>
     	<ul className="pull-right nav navbar-nav">
-		    <NavLink className="nav-link" to="/cart"> My Cart
+		    <NavLink className="nav-link" to="/cart"> My Cart ({getItemQuantityCount(cart)})
 			</NavLink>
 		</ul>
     </nav>

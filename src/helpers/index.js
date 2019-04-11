@@ -24,6 +24,13 @@ export const removeFromCart = (cart, item) => {
 		: [...cartWithoutItem(cart, item), { ...item, quantity: item.quantity - 1}]
 }
 
+// This function gets count of all quantity in items of cart
+export const getItemQuantityCount = (cart) => {
+	return cart.reduce((acc, item) => {
+				return acc + item.quantity
+			}, 0)
+}
+
 // save all store state to localStorage
 export function saveToLocalStorage(state) {
 	try {

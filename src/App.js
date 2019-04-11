@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Router from './routes/Router';
+import { connect } from 'react-redux';
 import Navigation from './components/navigation';
 
 class App extends Component {
@@ -16,4 +17,10 @@ class App extends Component {
 	}
 }
 
-export default App;
+function mapStateToProps(state) {
+	return {
+		cart: state.cart
+	}
+}
+
+export default connect(mapStateToProps)(App);
