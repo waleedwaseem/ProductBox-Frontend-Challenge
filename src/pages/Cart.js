@@ -1,9 +1,10 @@
 import React from 'react';
+import MyCart from '../components/cart'
 
 const Cart = (props) => {
 	return <div>
 		<h2> My Cart </h2>
-		<p> Here cart item will come </p>
+		<MyCart />
 	</div>
 }
 
