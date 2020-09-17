@@ -5,10 +5,10 @@ Hello! Your task is to create RandoStore; an online store where anyone can put u
 
 Overview
 --------
-I have provided you with a simple NodeJS application server for item additions and listing. This app does two things:
+I have provided you with a simple [NodeJS](https://nodejs.org) application server for item additions and listing. This app does two things:
 
 - Hosts static content from the 'static' directory
-- Serves a JSON REST API for CRUD operations on items stored in memory
+- Serves a JSON REST API for [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) operations on items stored in memory
 
 I would like you to build four pages:
 
@@ -38,13 +38,14 @@ The Items JSON REST API is exposed at `http://localhost:3000/items`
 On server start, item data is read into memory from init_data.json. All subsequent actions are done against this memory store. Stopping and starting the server will re-initialize data from `init_data.json`.
 
 API Endpoints:
-- /items
-HTTP GET: returns array of all items
-HTTP POST: creates a new item, returns the created item data
-- /items/:id
-HTTP GET: returns the item with given id (numeric, auto-incrementing). HTTP 404 if item not found
-HTTP DELETE: removes the items with given id, returns nothing (HTTP 204)
-
+```
+/items/
+- HTTP GET: returns array of all items
+- HTTP POST: creates a new item, returns the created item data
+/items/:id
+- HTTP GET: returns the item with given id (numeric, auto-incrementing). HTTP 404 if item not found
+- HTTP DELETE: removes the items with given id, returns nothing (HTTP 204)
+```
 Here is an example of results returned from HTTP GET on /items:
 ```
 [{"id":1,"name":"King Size Bed","price":"300","img":"./img/bed.jpg"},
@@ -54,7 +55,7 @@ Here is an example of results returned from HTTP GET on /items:
 {"id":5,"name":"Cookie Jar","price":"25","img":"./img/cookies.jpg"}]
 ```
 
-You must have noticed that from the top endpoints there is no mention of a cart. This is because I want you to implement the cart entirely in the front end. I suggest that you use browser local storage managed by an AngularJS Service.
+You must have noticed that from the top endpoints there is no mention of a cart. This is because I want you to implement the cart entirely in the front end. I suggest that you use [browser local storage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage).
 
 Requirements
 ------------
@@ -76,7 +77,7 @@ Idea inspiration
 If you have additional time after completing the requirements (I think you should), then I'd love to see what else you can do. Here are some ideas to get you started (but please don't limit yourself to these!).
 
 - Add Items form validation
-- Automated testing
+- Automated testing for example [Protractor](https://www.protractortest.org/)
 - Sorting/Searching of items
 - Optimize assets (minimize and/or bundle css/js)
 - Dynamically load items when they're added to backend (no need to refresh)
